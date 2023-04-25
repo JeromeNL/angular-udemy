@@ -15,6 +15,6 @@ export class AppComponent {
   ]
 
   add(newTask: string){
-    alert(newTask);
+    this.tasks.push(newTask);
   }
 }
