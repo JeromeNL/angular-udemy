@@ -13,4 +13,8 @@ export class AppComponent {
     "Go to the gym",
     "Homework"
   ]
+
+  add(){
+    alert("hi");
+  }
 }
