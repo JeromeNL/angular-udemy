@@ -2,8 +2,8 @@
   <div class="todo-list">
     {{ title }}
     <div class="input-group">
-      <input type="text" placeholder="Todo">
-      <button (click)="add()" class="add-button">+</button>
+      <input type="text" placeholder="Todo" #newTask>
+      <button (click)="add(newTask.value)" class="add-button">+</button>
     </div>
     <table>
       <tr *ngFor="let task of tasks" class="even">

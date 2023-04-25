@@ -14,7 +14,7 @@ export class AppComponent {
     "Homework"
   ]
 
-  add(){
-    alert("hi");
+  add(newTask: string){
+    alert(newTask);
   }
 }
