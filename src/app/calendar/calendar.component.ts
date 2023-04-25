@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class CalendarComponent {
 
+  constructor() {
+
+  }
+  ngOnInit() : void {
+
+  }
+
+  selectedDate = new Date();
+
+
 }
