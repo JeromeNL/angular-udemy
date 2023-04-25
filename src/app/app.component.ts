@@ -19,22 +19,23 @@ export class AppComponent {
   }
 
   remove(existingTask: Task){
-    var userConfirmed = confirm(`Weet je zeker dat je het volgende item wilt verwijderen? \n "${existingTask}"`)
+    var userConfirmed = confirm(`Weet je zeker dat je het volgende item wilt verwijderen? \n "${existingTask.title}"`)
     if(userConfirmed) {
       this.tasks = this.tasks.filter(task => task != existingTask);
     }
   }
 
-  done(existingTask: Task){
-    existingTask.isDone = true;
-  }
+
 }
 
 class Task {
-
   public isDone = false;
   constructor(public title: string) {
 
+  }
+
+  toggleIsDone(){
+    this.isDone = !this.isDone;
   }
 }
 
