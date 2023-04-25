@@ -7,25 +7,51 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-list';
-  tasks = [
-    "Visit Ann",
-    "Call Dad",
-    "Go to the gym",
-    "Homework"
+  tasks: Task[] = [
+    new Task("Visit Ann"),
+    new Task("Call Dad"),
+    new Task("Go to the gym"),
+    new Task("Homework")
   ]
 
   add(newTask: string){
-    this.tasks.push(newTask);
+    this.tasks.push(new Task(newTask));
   }
 
-  remove(existingTask: string){
+  remove(existingTask: Task){
     var userConfirmed = confirm(`Weet je zeker dat je het volgende item wilt verwijderen? \n "${existingTask}"`)
     if(userConfirmed) {
       this.tasks = this.tasks.filter(task => task != existingTask);
     }
   }
 
-  done(existingTask: string){
+  done(existingTask: Task){
+    existingTask.isDone = true;
+  }
+}
+
+class Task {
+
+  public isDone = false;
+  constructor(public title: string) {
 
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
