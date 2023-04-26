@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Route} from "@angular/router";
+import {NgForm} from "@angular/forms";
 
 
 @Component({
@@ -25,8 +26,15 @@ export class TaskListComponent implements OnInit{
     new Task("Homework")
   ]
 
-  add(){
+  add(taskNgForm: NgForm){
+    if(!taskNgForm.touched)
+      return;
+
+    if(!taskNgForm.valid)
+      return;
+
     this.tasks.push(new Task(this.newTaskTitle));
+    taskNgForm.reset({date: this.date});
   }
 
   remove(existingTask: Task){
