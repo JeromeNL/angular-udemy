@@ -22,6 +22,7 @@ export class TaskService {
 
   addTask(newTask: NewTaskDto){
     this.tasks.push(new TaskItemDto(newTask.title));
+    console.log(newTask);
   }
 
   removeTask(existingTask: TaskItemDto){

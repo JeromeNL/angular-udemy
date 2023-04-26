@@ -13,15 +13,15 @@ import {TaskService} from "./task.service";
 export class TaskListComponent implements OnInit{
   date: Date = new Date();
   newTask: NewTaskDto = new NewTaskDto;
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private taskService: TaskService) {
 
   }
-  taskService = new TaskService();
+
   tasks = this.taskService.getAllTasks();
 
   ngOnInit(): void {
     var strDate = this.route.snapshot.params['date'];
-    this.newTask = new NewTaskDto(this.newTask.title, strDate);
+    this.newTask = new NewTaskDto(this.newTask.title, new Date(strDate));
 
   }
 
