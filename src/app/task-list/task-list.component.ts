@@ -9,6 +9,7 @@ import {ActivatedRoute, Route} from "@angular/router";
 })
 export class TaskListComponent implements OnInit{
   date: Date = new Date();
+  newTaskTitle: string = "";
   constructor(private route: ActivatedRoute) {
 
   }
@@ -24,8 +25,8 @@ export class TaskListComponent implements OnInit{
     new Task("Homework")
   ]
 
-  add(newTask: string){
-    this.tasks.push(new Task(newTask));
+  add(){
+    this.tasks.push(new Task(this.newTaskTitle));
   }
 
   remove(existingTask: Task){
