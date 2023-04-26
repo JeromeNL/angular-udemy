@@ -16,13 +16,13 @@ export class TaskService {
     new TaskItemDto("Homework")
   ]
 
-  getAllTasks(): TaskItemDto[]{
+  getAllTasks(): ReadonlyArray<TaskItemDto>{
     return this.tasks;
   }
 
   addTask(newTask: NewTaskDto){
-    this.tasks.push(new TaskItemDto(newTask.title));
-    console.log(newTask);
+    this.tasks = this.tasks.concat(new TaskItemDto(newTask.title));
+    // this.tasks.push(new TaskItemDto(newTask.title));
   }
 
   removeTask(existingTask: TaskItemDto){
