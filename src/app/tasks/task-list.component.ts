@@ -8,7 +8,8 @@ import {TaskService} from "./task.service";
 @Component({
   selector: 'app-tasks',
   templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.css']
+  styleUrls: ['./task-list.component.css'],
+
 })
 export class TaskListComponent implements OnInit{
   date: Date = new Date();

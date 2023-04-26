@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TasksModule} from "./tasks/tasks.module";
 import { CalendarModule } from "./calendar/calendar.module";
+import {TaskService} from "./tasks/task.service";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { CalendarModule } from "./calendar/calendar.module";
     TasksModule,
     CalendarModule,
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
