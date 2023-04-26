@@ -9,15 +9,22 @@ export class TaskService {
 
   constructor() { }
 
+  private tasks: TaskItemDto[] = [
+    new TaskItemDto("Visit Ann"),
+    new TaskItemDto("Call Dad"),
+    new TaskItemDto("Go to the gym"),
+    new TaskItemDto("Homework")
+  ]
+
   getAllTasks(): TaskItemDto[]{
-    throw new Error("Not implemented");
+    return this.tasks;
   }
 
   addTask(newTask: NewTaskDto){
-
+    this.tasks.push(new TaskItemDto(newTask.title));
   }
 
   removeTask(existingTask: TaskItemDto){
-
+    this.tasks = this.tasks.filter(task => task != existingTask);
   }
 }
